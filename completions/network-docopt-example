@@ -9,7 +9,7 @@ _network_docopt_example()
         unset cmd[COMP_CWORD]
     fi
 
-    local choices=$(sudo ${cmd[*]} options)
+    local choices=$(${cmd[*]} options)
     COMPREPLY=($(compgen -W '${choices}' -- ${cur} ))
     return 0
 }
