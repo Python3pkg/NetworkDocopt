@@ -370,9 +370,22 @@ class NetworkDocopt():
                         token.value))
 
             self.match = True
+            self.options = []
 
+            # Set the option choices to return for bash-completion
             if cmd.option:
-                self.options = cmd.option
+
+                # If the user entered the exact keyword then we should return the
+                # options following that keyword.
+                if not cmd.last_matching_token or cmd.last_matching_token.exact_match:
+                    self.options = cmd.option
+
+                # If they only entered part of the keyword ('sh' for 'show' for example)
+                # then we should return 'show' so bash can tab complete it.
+                else:
+                    if cmd.last_matching_token.key_text:
+                        self.options = [cmd.last_matching_token.key_text]
+
 
             # If the user entered -h or --help print the docstring and exit
             if len(cmd.tokens) == 1:
