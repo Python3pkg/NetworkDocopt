@@ -1,4 +1,5 @@
 # pylint: disable=c0111
+from _gitversion import get_version
 try:
     from setuptools import setup
 except ImportError:
@@ -7,23 +8,29 @@ except ImportError:
     from setuptools import setup
 import sys
 
+
 def install_requires():
-    _install_requires=''
-    if sys.version_info <=(3, 0):
+    _install_requires = ''
+    if sys.version_info <= (3, 0):
         _install_requires = ['ipaddr']
     return _install_requires
 
 
 setup(
     name='network-docopt',
-    version='0.1.1',
+    version=get_version(),
     description="Network Docopt",
     url="https://github.com/dwalton76/NetworkDocopt",
     author='Daniel Walton',
     author_email='dwalton@cumulusnetworks.com',
+    license="MIT",
     py_modules=['network_docopt'],
     install_requires=install_requires(),
     scripts=['bin/network-docopt-example'],
     data_files=[('usr/share/bash-completion/completions',
-                 ['completions/network-docopt-example'])]
+                 ['completions/network-docopt-example'])],
+    classifiers=[
+        'Topic :: Utilities',
+        'License :: OSI Approved :: MIT License'
+    ]
 )
