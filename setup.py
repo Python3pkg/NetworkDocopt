@@ -30,6 +30,9 @@ setup(
     data_files=[('usr/share/bash-completion/completions',
                  ['completions/network-docopt-example'])],
     classifiers=[
+        'Development Status :: 4 - Beta',
+        'Operating System :: POSIX :: Linux',
+        'Topic :: System :: Networking',
         'Topic :: Utilities',
         'License :: OSI Approved :: MIT License'
     ]
