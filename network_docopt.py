@@ -395,10 +395,15 @@ class NetworkDocopt():
                     exit(0)
 
         else:
-            print("\nERROR: ambiguous parse chain...matches:")
-
+            #print("\nERROR: ambiguous parse chain...matches:")
+            _str = 'Ambigious Match. Options:'
+            _possible_matches = []
             for cmd in candidates:
-                print("%s\n" % cmd)
+                for _token in cmd.tokens:
+                    if _token.key_text:
+                        _possible_matches.append(_token.key_text)
+            print(_str + ' ' + ', '.join(_possible_matches))
+            exit(8)
 
     def get(self, keyword):
         return self.args.get(keyword)
