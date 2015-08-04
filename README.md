@@ -1,12 +1,6 @@
-# Overview
-NetworkDocopt is a command line argument parser for networking focused applications.  This was heavily inspired by the docopt module at http://docopt.org/ (no code from docopt was used however). The key differences are:
+# network-docopt
 
-- Support for specific types of <> variable tags with sanity checking:
-    - \<ip\> or \<source-ip\>   : Must enter a valid IPv4 Address
-    - \<ip/mask\>             : Must enter a valid IPv4 subnet
-    - \<interface\>           : Must enter a valid "lo, eth0, swp5, etc" interfacae
-    - \<name> or \<cleartext\> : Any text will do
-    - \<number\>              : Must enter a number
+NetworkDocopt is a command line argument parser for networking focused applications.  This was heavily inspired by the docopt module at http://docopt.org/ (no code from docopt was used however). The key differences are:
 
 - Support for partial command line options.  If your program foo has a "foo show summary" option you can also enter "foo sh sum"
 
@@ -20,32 +14,29 @@ NetworkDocopt is a command line argument parser for networking focused applicati
 
 This bash script will call network-docopt-example with 'options' as the last argument. For instance if you type "network-docopt-example show ip <tab><tab>" the bash script will call "network-docopt-example show ip options" which will return "route" and "interface". This tells bash what the next options are.
 
-# Installing the deb
-We have not hosted a .deb for this project yet but we checked a deb into the repo.
-You can install it via ```dpky -i python-network-docopt_0.1.0-1_all.deb```
+##Contributing
 
-# Building a new deb
-You can build a .deb via:
-```
-apt-get install python-stdeb python-all build-essential
-python setup.py --command-packages=stdeb.command sdist_dsc bdist_deb
-```
+1. Fork it.
+2. Create your feature branch (`git checkout -b my-new-feature`).
+3. Commit your changes (`git commit -am 'Add some feature'`).
+4. Push to the branch (`git push origin my-new-feature`).
+5. Create new Pull Request.
 
-This will place a .deb in the deb_dist directory, just "dpkg -i" to install it.
-Example:
+## License and Authors
+Author:: Daniel Walton
 
-```
-root@cel-redxp-99:~/NetworkDocopt/deb_dist# ls -l *.deb
--rw-r--r-- 1 root root 5650 May 20 13:57 python-network-docopt_0.1.0-1_all.deb
-root@cel-redxp-99:~/NetworkDocopt/deb_dist#
-root@cel-redxp-99:~/NetworkDocopt/deb_dist#
-root@cel-redxp-99:~/NetworkDocopt/deb_dist# dpkg -i python-network-docopt_0.1.0-1_all.deb
-(Reading database ... 28658 files and directories currently installed.)
-Preparing to replace python-network-docopt 0.1.0-cl3.0 (using python-network-docopt_0.1.0-1_all.deb) ...
-Unpacking replacement python-network-docopt ...
-Setting up python-network-docopt (0.1.0-1) ...
-root@cel-redxp-99:~/NetworkDocopt/deb_dist#
-```
+Copyright:: 2015 Cumulus Networks Inc.
 
-# Removing a deb
-To remove the existing python-network-docopt package run ``dpkg -P python-network-docopt``
+![Cumulus icon](http://cumulusnetworks.com/static/cumulus/img/logo_2014.png)
+
+### Cumulus Linux
+
+Cumulus Linux is a software distribution that runs on top of industry standard
+networking hardware. It enables the latest Linux applications and automation
+tools on networking gear while delivering new levels of innovation and
+ﬂexibility to the data center.
+
+For further details please see:
+[cumulusnetworks.com](http://www.cumulusnetworks.com)
+
+This project is licensed under MIT
