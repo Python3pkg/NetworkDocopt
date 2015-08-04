@@ -23,7 +23,7 @@ This bash script will call network-docopt-example with 'options' as the last arg
 5. Create new Pull Request.
 
 ## License and Authors
-Author:: Daniel Walton
+Original Author:: Daniel Walton
 
 Copyright:: 2015 Cumulus Networks Inc.
 
