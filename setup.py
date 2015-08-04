@@ -22,7 +22,6 @@ setup(
     name='network-docopt',
     version=get_version(),
     description="Network Docopt",
-    long_description=readme_content,
     url="https://github.com/CumulusNetworks/NetworkDocopt",
     author='Cumulus Networks',
     author_email='ce-ceng@cumulusnetworks.com',
