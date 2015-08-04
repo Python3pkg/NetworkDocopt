@@ -8,6 +8,8 @@ except ImportError:
     from setuptools import setup
 import sys
 
+with open('README.md') as f:
+    readme_content = f.read().strip()
 
 def install_requires():
     _install_requires = ''
@@ -20,6 +22,7 @@ setup(
     name='network-docopt',
     version=get_version(),
     description="Network Docopt",
+    long_description=readme_content,
     url="https://github.com/CumulusNetworks/NetworkDocopt",
     author='Cumulus Networks',
     author_email='ce-ceng@cumulusnetworks.com',
