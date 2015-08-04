@@ -8,8 +8,8 @@ except ImportError:
     from setuptools import setup
 import sys
 
-with open('README.rst') as f:
-    readme_content = f.read().strip()
+#with open('README.rst') as f:
+#    readme_content = f.read().strip()
 
 def install_requires():
     _install_requires = ''
