@@ -7,9 +7,12 @@ except ImportError:
     ez_setup.use_setuptools()
     from setuptools import setup
 import sys
+import os
 
-#with open('README.rst') as f:
-#    readme_content = f.read().strip()
+
+def read_contents(fname='README'):
+    return open(os.path.join(os.path.dirname(__file__), fname)).read()
+
 
 def install_requires():
     _install_requires = ''
@@ -23,6 +26,7 @@ setup(
     version=get_version(),
     description="Network Docopt",
     url="https://github.com/CumulusNetworks/NetworkDocopt",
+    long_description=read_contents(),
     author='Cumulus Networks',
     author_email='ce-ceng@cumulusnetworks.com',
     license="MIT",
