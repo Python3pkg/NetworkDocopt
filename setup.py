@@ -8,10 +8,11 @@ except ImportError:
     from setuptools import setup
 import sys
 import os
+import io
 
 
 def read_contents(fname='README'):
-    return open(os.path.join(os.path.dirname(__file__), fname)).read()
+    return io.open(os.path.join(os.path.dirname(__file__), fname), encoding="utf-8").read()
 
 
 def install_requires():
