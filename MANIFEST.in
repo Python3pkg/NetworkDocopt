@@ -1,4 +1,2 @@
-include RELEASE-VERSION
-include _gitversion.py
 include ez_setup.py
 include completions/network-docopt-example

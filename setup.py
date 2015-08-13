@@ -1,5 +1,5 @@
 # pylint: disable=c0111
-from _gitversion import get_version
+from gitversion import rewritable_git_version
 try:
     from setuptools import setup
 except ImportError:
@@ -24,7 +24,7 @@ def install_requires():
 
 setup(
     name='network-docopt',
-    version=get_version(),
+    version=rewritable_git_version(__file__),
     description="Network Docopt",
     url="https://github.com/CumulusNetworks/NetworkDocopt",
     long_description=read_contents(),
@@ -37,6 +37,7 @@ setup(
     data_files=[('usr/share/bash-completion/completions',
                  ['completions/network-docopt-example'])],
     classifiers=[
+        'License :: OSI Approved :: MIT License',
         'Development Status :: 4 - Beta',
         'Operating System :: POSIX :: Linux',
         'Topic :: System :: Networking',
