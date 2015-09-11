@@ -1,5 +1,5 @@
 # pylint: disable=c0111
-from gitversion import rewritable_git_version
+from version import __VERSION__
 try:
     from setuptools import setup
 except ImportError:
@@ -11,8 +11,9 @@ import os
 import io
 
 
-def read_contents(fname='README'):
-    return io.open(os.path.join(os.path.dirname(__file__), fname), encoding="utf-8").read()
+def read_contents(fname='README.rst'):
+    return io.open(os.path.join(os.path.dirname(__file__),
+                                fname), encoding="utf-8").read()
 
 
 def install_requires():
@@ -24,7 +25,7 @@ def install_requires():
 
 setup(
     name='network-docopt',
-    version=rewritable_git_version(__file__),
+    version=__VERSION__,
     description="Network Docopt",
     url="https://github.com/CumulusNetworks/NetworkDocopt",
     long_description=read_contents(),
