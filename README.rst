@@ -48,6 +48,14 @@ Copyright:: 2015 Cumulus Networks Inc.
 
    Cumulus icon
 
+Version History
+----------------
+
+* 0.1.10: Bugfixes. Fix setup.py after adding gitversion support. one can build debs now
+* 0.1.9: Add gitversion support
+* 0.1.8:  Initial commit to pypi
+
+
 Cumulus Linux
 ~~~~~~~~~~~~~
 
