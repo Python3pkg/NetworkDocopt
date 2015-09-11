@@ -35,7 +35,7 @@ setup(
     py_modules=['network_docopt'],
     install_requires=install_requires(),
     scripts=['bin/network-docopt-example'],
-    data_files=[('usr/share/bash-completion/completions',
+    data_files=[('share/bash-completion/completions',
                  ['completions/network-docopt-example'])],
     classifiers=[
         'License :: OSI Approved :: MIT License',

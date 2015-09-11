@@ -51,6 +51,7 @@ Copyright:: 2015 Cumulus Networks Inc.
 Version History
 ----------------
 
+* 0.1.11: Bug fixes. fix setup.py. builds data files incorrectly
 * 0.1.10: Bugfixes. Fix setup.py after adding gitversion support. one can build debs now
 * 0.1.9: Add gitversion support
 * 0.1.8:  Initial commit to pypi
