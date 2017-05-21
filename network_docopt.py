@@ -395,7 +395,7 @@ class NetworkDocopt():
             if len(cmd.tokens) == 1:
                 token = cmd.tokens[0]
                 if token.key_text == '-h' or token.key_text == '--help':
-                    print(self.docstring)
+                    print((self.docstring))
                     exit(0)
 
         else:
@@ -406,7 +406,7 @@ class NetworkDocopt():
                 for _token in cmd.tokens:
                     if _token.key_text:
                         _possible_matches.append(_token.key_text)
-            print(_str + ' ' + ', '.join(_possible_matches))
+            print((_str + ' ' + ', '.join(_possible_matches)))
             exit(8)
 
     def get(self, keyword):
@@ -414,4 +414,4 @@ class NetworkDocopt():
 
     def print_options(self):
         if self.options:
-            print('\n'.join(self.options))
+            print(('\n'.join(self.options)))

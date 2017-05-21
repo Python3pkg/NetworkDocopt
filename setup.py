@@ -1,9 +1,9 @@
 # pylint: disable=c0111
-from version import __VERSION__
+from .version import __VERSION__
 try:
     from setuptools import setup
 except ImportError:
-    import ez_setup
+    from . import ez_setup
     ez_setup.use_setuptools()
     from setuptools import setup
 import sys
